@@ -15,32 +15,7 @@ La plataforma combina un motor de captación digital masiva (Calculadora Laboral
 
 ## 🏛️ Ecosistema de Repositorios
 
-El proyecto está diseñado bajo una arquitectura de micro-frontends desacoplados conectados a un backend central API-First:
-                            [ INTERNET ]
-                                    │
-             ┌──────────────────────┴──────────────────────┐
-             ▼ (Pauta & Orgánico)                          ▼ (Leads Registrados)
-     ┌───────────────┐                             ┌───────────────┐
-     │ toca-marketing│                             │toca-portal-   │
-     │ (Next.js SSR) │                             │usuarios (Vite)│
-     │  toca.pe      │                             │ app.toca.pe   │
-     └───────┬───────┘                             └───────┬───────┘
-             │                                             │
-             │ POST /leads                                 │ GET/POST /casos
-             ▼                                             ▼
-     ┌─────────────────────────────────────────────────────────────┐
-     │                         toca-server                         │
-     │             (Django REST Framework + PostgreSQL)            │
-     │                      api.toca.pe                            │
-     └───────────────┬─────────────────────────────┬───────────────┘
-                     │                             │
-                     ▼ (Gestión Legal)             ▼ (Workers en Background)
-             ┌───────────────┐             ┌───────────────┐
-             │toca-portal-   │             │Celery + Redis │
-             │abogados (Vite)│             │• WhatsApp API │
-             │legal.toca.pe  │             │• Scraper CEJ  │
-             └───────────────┘             │• Docs NLPT    │
-                                           └───────────────┘
+El proyecto está diseñado bajo una arquitectura de micro-frontends desacoplados conectados a un backend central API-First
 
 
 ### 1. [`toca-marketing`](https://github.com/toca-pe/toca-marketing)
